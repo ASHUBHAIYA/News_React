@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Clock, Calendar, ArrowRight } from 'lucide-react';
@@ -14,6 +13,7 @@ export interface ArticleProps {
   publishedAt: string;
   readTime: string;
   slug: string;
+  content?: string;
 }
 
 interface ArticleCardProps {
@@ -30,7 +30,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
   imageHeight = 'h-48',
 }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const { title, excerpt, category, imageUrl, publishedAt, readTime, slug } = article;
+  const { title, excerpt, category, imageUrl, publishedAt, readTime, slug, content } = article;
   
   // Format date to human-readable
   const formattedDate = new Date(publishedAt).toLocaleDateString('en-US', {

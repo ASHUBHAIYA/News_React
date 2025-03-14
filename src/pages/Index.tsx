@@ -3,8 +3,9 @@ import React from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import NewsGrid from '@/components/home/NewsGrid';
+import { ArticleProps } from '@/components/home/ArticleCard';
 
-const sampleArticles = [
+const sampleArticles: ArticleProps[] = [
   {
     id: '1',
     title: 'Global Economic Summit Addresses Climate Change',
@@ -75,7 +76,7 @@ const sampleArticles = [
     readTime: '4 min read',
     slug: 'cultural-festival'
   }
-] as const;
+];
 
 const Index = () => {
   return (
